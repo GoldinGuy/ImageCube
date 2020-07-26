@@ -1,0 +1,140 @@
+@import "compass/css3";
+
+// toggle the cube dimensions here.
+$cubeWidth: 250px;
+$cubeHeight: 250px;
+$cubeDepth: $cubeHeight;
+
+body {
+	color: #333;
+	padding: 20px;
+	text-align: center;
+	font-family: Arial;
+}
+
+.separator {
+	margin-top: 40px;
+}
+
+/* 3D Cube */
+.space {
+	perspective: 1000px;
+	width: $cubeWidth;
+	height: $cubeHeight;
+	text-align: center;
+	display: inline-block;
+}
+
+.cube {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	text-align: center;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotateX(-15deg) rotateY(15deg);
+}
+
+.cube_face {
+	overflow: hidden;
+	position: absolute;
+
+	border: 1px solid #888;
+	background: #fff;
+	box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
+	color: #333;
+	line-height: $cubeWidth;
+	opacity: 0.8;
+}
+
+.cube_front {
+	width: $cubeWidth;
+	height: $cubeHeight;
+	transform: translate3d(0, 0, $cubeDepth / 2);
+}
+
+._cube_back {
+	width: $cubeWidth;
+	height: $cubeHeight;
+	transform: rotateY(180deg) translate3d(0, 0, $cubeDepth / 2);
+}
+
+.cube_top {
+	width: $cubeWidth;
+	height: $cubeDepth;
+	transform: rotateX(90deg) translate3d(0, 0, $cubeHeight / 2);
+}
+
+.cube_bottom {
+	width: $cubeWidth;
+	height: $cubeDepth;
+	transform: rotateX(-90deg) translate3d(0, 0, $cubeHeight / 2);
+}
+
+.cube_left {
+	width: $cubeDepth;
+	height: $cubeHeight;
+	left: 50%;
+	margin-left: -$cubeDepth / 2;
+	transform: rotateY(-90deg) translate3d(0, 0, $cubeWidth / 2);
+}
+
+.cube_right {
+	width: $cubeDepth;
+	height: $cubeHeight;
+	left: 50%;
+	margin-left: -$cubeDepth / 2;
+	transform: rotateY(90deg) translate3d(0, 0, $cubeWidth / 2);
+}
+
+#radio-left:checked ~ .space .cube {
+	transform: rotateY(90deg);
+}
+
+#radio-right:checked ~ .space .cube {
+	transform: rotateY(-90deg);
+}
+
+#radio-bottom:checked ~ .space .cube {
+	transform: rotateX(90deg);
+}
+
+#radio-top:checked ~ .space .cube {
+	transform: rotateX(-90deg);
+}
+
+#radio-back:checked ~ .space .cube {
+	transform: rotateY(180deg);
+}
+
+// Apply backgrounds
+.cube_front {
+	background: url("pics/mom1.jpg");
+	background-size: 100%;
+}
+
+.cube_back {
+	background: url("pics/mom1.jpg");
+	background-size: auto 100%;
+}
+
+.cube_left {
+	background: url("pics/mom1.jpg");
+	background-size: auto 100%;
+}
+
+.cube_right {
+	background: url("pics/mom1.jpg");
+	background-size: auto 100%;
+}
+
+.cube_top {
+	background: url("pics/mom1.jpg");
+	background-size: auto 100%;
+}
+
+.cube_bottom {
+	background: url("pics/mom1.jpg");
+	background-size: auo 100%;
+}

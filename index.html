@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Happy Birthday Jen!</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<h2>Happy Birthday Mom!</h2>
+
+		<button class="button" id="button" onclick="next()">Spin the Cube</button>
+		<br /><br /><br />
+		<input type="radio" checked id="rad_front" name="select-face" />
+		<input type="radio" id="rad_back" name="select-face" />
+		<input type="radio" id="rad_left" name="select-face" />
+		<input type="radio" id="rad_right" name="select-face" />
+		<input type="radio" id="rad_top" name="select-face" />
+		<input type="radio" id="rad_bottom" name="select-face" />
+
+		<div class="break"></div>
+
+		<div class="space">
+			<div class="cube">
+				<div class="cube_face cube_front"></div>
+				<div class="cube_face cube_back"></div>
+				<div class="cube_face cube_left"></div>
+				<div class="cube_face cube_right"></div>
+				<div class="cube_face cube_top"></div>
+				<div class="cube_face cube_bottom"></div>
+			</div>
+		</div>
+
+		<div class="break"></div>
+
+		<div style="padding: 6px;">
+			<!-- <p>
+				This example use media queries to re-arrange the pics on different
+				screen sizes: for screens larger than 700px wide, it will show four pics    
+				side by side, for screens smaller than 700px, it will show two pics side
+				by side. For screens smaller than 500px, the pics will stack vertically
+				(100%).
+            </p> -->
+			<p>
+				From Seth
+			</p>
+			<p>
+				© Juno Inc. 2020
+			</p>
+		</div>
+	</body>
+	<script>
+		function next() {
+			if (document.getElementById("rad_front").checked) {
+				document.getElementById("rad_front").checked = false;
+				radio = document.getElementById("rad_back");
+				radio.checked = true;
+			} else if (document.getElementById("rad_back").checked) {
+				document.getElementById("rad_back").checked = false;
+				radio = document.getElementById("rad_left");
+				radio.checked = true;
+			} else if (document.getElementById("rad_left").checked) {
+				document.getElementById("rad_left").checked = false;
+				radio = document.getElementById("rad_right");
+				radio.checked = true;
+			} else if (document.getElementById("rad_right").checked) {
+				document.getElementById("rad_right").checked = false;
+				radio = document.getElementById("rad_top");
+				radio.checked = true;
+			} else if (document.getElementById("rad_top").checked) {
+				document.getElementById("rad_top").checked = false;
+				radio = document.getElementById("rad_bottom");
+				radio.checked = true;
+			} else if (document.getElementById("rad_bottom").checked) {
+				document.getElementById("rad_bottom").checked = false;
+				radio = document.getElementById("rad_front");
+				radio.checked = true;
+			}
+		}
+	</script>
+
+	<script src="plugins/jquery/jquery.js"></script>
+</html>
