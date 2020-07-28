@@ -1,6 +1,5 @@
 @import "compass/css3";
 
-// toggle the cube dimensions here.
 $cubeWidth: 250px;
 $cubeHeight: 250px;
 $cubeDepth: $cubeHeight;
@@ -16,7 +15,6 @@ body {
 	margin-top: 40px;
 }
 
-/* 3D Cube */
 .space {
 	perspective: 1000px;
 	width: $cubeWidth;
@@ -108,7 +106,6 @@ body {
 	transform: rotateY(180deg);
 }
 
-// Apply backgrounds
 .cube_front {
 	background: url("pics/mom1.jpg");
 	background-size: 100%;
